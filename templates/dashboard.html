@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,161 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>dashboard</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Nukee</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav nav-underline">
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="modal" data-bs-target="#modal1">Elimina canali</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="modal" data-bs-target="#modal2">Elimina ruoli</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="modal" data-bs-target="#modal3">Elimina emoji</button>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" data-bs-toggle="modal" data-bs-target="#modal4">Ban utenti</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    
+    <div class="row mt-5 mx-4">
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Elimina canali</h5>
+            <p class="card-text">Elimina tutti i canali del server</p>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal1">Esegui</button>
+            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal1Label">Conferma azione</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Questa azione non può essere annullata, sei sicuro di voler proseguire?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-danger">Continua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Elimina ruoli</h5>
+            <p class="card-text">Elimina tutti i ruoli del server</p>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal2">Esegui</button>
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal2Label">Conferma azione</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Questa azione non può essere annullata, sei sicuro di voler proseguire?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-danger">Continua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Elimina emoji</h5>
+            <p class="card-text">Elimina tutte le emoji del server</p>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal3">Esegui</button>
+            <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal3Label">Conferma azione</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Questa azione non può essere annullata, sei sicuro di voler proseguire?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-danger">Continua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5 mx-4">
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Ban utenti</h5>
+            <p class="card-text">Bandisce tutti gli utemti dal server</p>
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal4">Esegui</button>
+            <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modal4Label">Conferma azione</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Questa azione non può essere annullata, sei sicuro di voler proseguire?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annulla</button>
+                    <button type="button" class="btn btn-danger">Continua</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">In arrivo...</h5>
+            <p class="card-text">Questa funzione non è ancora disponibile...</p>
+            <button type="button" class="btn btn-outline-primary" disabled>Esegui</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">In arrivo...</h5>
+            <p class="card-text">Questa funzione non è ancora disponibile...</p>
+            <button type="button" class="btn btn-outline-primary" disabled>Esegui</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
   </body>
 </html>
