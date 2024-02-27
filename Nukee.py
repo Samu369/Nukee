@@ -59,6 +59,58 @@ def ch_delete(token: str, serverid: int): # Elimina tutti i canali
     except Exception as e:
         print(f"ERRORE: {e}\n")
 
+def ro_delete(token: str, serverid: int): # Elimina tutti i ruoli
+    try:
+        intents = discord.Intents.default()
+        intents.all()
+        client = discord.Client(intents=intents)
+        @client.event
+        async def on_ready():
+            print('--- ELIMINAZIONE RUOLI ---')
+            server = client.get_guild(serverid)
+            if server:
+                ruoli = server.roles
+                for r in ruoli:
+                    if r.name != '@everyone':
+                        try:
+                            await r.delete()
+                            print(f'Ruolo eliminato: {r.name} | {r.id}')
+                        except Exception as e:
+                            print(f'[{e}] Impossibile eliminare il ruolo: {r.name} | {r.id}')
+                            continue
+                print("--- OPERAZIONE TERMINATA ---\n")
+            else:
+                print("IMPOSSIBILE TROVARE IL SERVER\n")
+            await client.close()
+        client.run(token)
+    except Exception as e:
+        print(f"ERRORE: {e}\n")
+
+def em_delete(token: str, serverid: int): # Elimina tutte le emoji
+    try:
+        intents = discord.Intents.default()
+        intents.all()
+        client = discord.Client(intents=intents)
+        @client.event
+        async def on_ready():
+            print('--- ELIMINAZIONE RUOLI ---')
+            server = client.get_guild(serverid)
+            if server:
+                emoji = server.emojis
+                for em in emoji:
+                    try:
+                        await em.delete()
+                        print(f'Emoji eliminata: {em.name} | {em.id}')
+                    except Exception as e:
+                        print(f'[{e}] Impossibile eliminare: {em.name} | {em.id}')
+                        continue
+                print("--- OPERAZIONE TERMINATA ---\n")
+            else:
+                print("IMPOSSIBILE TROVARE IL SERVER\n")
+            await client.close()        
+        client.run(token)
+    except Exception as e:
+        print(f"ERRORE: {e}\n")
 
 # --- Flask ---
 app = Flask(__name__)
@@ -100,9 +152,17 @@ def login():
 
 @app.route("/nukee/r", methods=["POST"])
 def r():
-    if request.form["r"] == "1":
+    r = request.form["r"]
+    if r == "1":
         ch_delete(token=tk, serverid=sid)
         return render_template("dashboard.html", hidden="")
+    elif r == "2":
+        ro_delete(token=tk, serverid=sid)
+        return render_template("dashboard.html", hidden="")
+    elif r == "3":
+        em_delete(token=tk, serverid=sid)
+        return render_template("dashboard.html", hidden="")
+
 
 
 if __name__ == "__main__":
