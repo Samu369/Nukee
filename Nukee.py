@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from src import discord_checks, discord_functions
+from nukee import discord_checks, discord_functions
 import asyncio, threading, werkzeug.serving
 
 # --- CONSTANTS ---
