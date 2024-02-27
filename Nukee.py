@@ -77,12 +77,15 @@ def login():
     elif request.method == "POST":
         r = request.form.get("r", "0")
         if r != "0":
-            return render_template("loading.html", r=r)
+            return render_template("loading_r.html", r=r)
         tk = request.form["token"]
         try: 
             sid = int(request.form["server-id"])
         except ValueError: 
             sid = 0
+        l = request.form.get("l", "0")
+        if l == "0":
+            return render_template("loading_l.html", token=tk, serverid=sid)
         if asyncio.run(check_token(tk)) == True:
             tk_v = "is-valid"
             if asyncio.run(check_server(tk, sid)) == True:
